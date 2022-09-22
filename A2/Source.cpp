@@ -21,14 +21,14 @@ int main() {
 
 		// This while loop will continue until it reaches the end of file and parses all the names in the file
 		while (!studentDataFile.eof()) {
-		
+
 			string fName, lName;
 
 			// The getline() function will first read the last name, then a comma will separate the data, with the first name
 			getline(studentDataFile, lName, ',');
 			// '\n' will indicates a new line which will separate the first name and this loop will go on 
 			getline(studentDataFile, fName, '\n');
-			
+
 			// object student_data will be created
 			STUDENT_DATA student_data_object;
 
@@ -42,6 +42,13 @@ int main() {
 		// StudentData.txt will be closed
 		studentDataFile.close();
 	}
+
+	// It will print out the first and last names of the student only if it is compiled in the Debug mode
+#ifdef _DEBUG
+	for (STUDENT_DATA student_data_object : vectorList) {
+		cout << student_data_object.firstName << " " << student_data_object.lastName << endl;
+	}
+#endif
 
 	return 1;
 }
