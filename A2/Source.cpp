@@ -79,10 +79,8 @@ int main() {
 
 #ifdef PRE_RELEASE
 		cout << student_data_object.firstName << " " << student_data_object.lastName << " - " << student_data_object.emailAddress << endl;
-
 #else
 		cout << student_data_object.firstName << " " << student_data_object.lastName << endl;
-
 #endif // PRE_RELEASE
 	}
 #endif
